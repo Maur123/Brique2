@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ChessboardTest {
 
     @Test
     public void checkSquareState(){
         Chessboard board = new Chessboard();
-
 
         var actualSquareValue = board.checkSquarePlayer(new Posizione(7,5));
 
@@ -35,5 +35,39 @@ public class ChessboardTest {
 
         assertEquals(expectedColor,actualSquareColor);
 
+    }
+
+    @Test
+    public void checkImpossiblePosition(){
+        Chessboard board = new Chessboard();
+
+
+        Posizione position = new Posizione(-4,5);
+
+        boolean checkposition = board.isValidPosition(position);
+
+        assertNotEquals(true,checkposition);
+    }
+    @Test
+    public void checkImpossiblePosition2(){
+        Chessboard board = new Chessboard();
+
+
+        Posizione position = new Posizione(14,25);
+
+        boolean checkposition = board.isValidPosition(position);
+
+        assertNotEquals(true,checkposition);
+    }
+    @Test
+    public void checkPossiblePosition(){
+        Chessboard board = new Chessboard();
+
+
+        Posizione position = new Posizione(4,5);
+
+        boolean checkposition = board.isValidPosition(position);
+
+        assertEquals(true,checkposition);
     }
 }

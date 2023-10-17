@@ -52,9 +52,11 @@ public class Chessboard {
         }
     }
 
-    private boolean isValidPosition(Posizione posizione) {
+    public boolean isValidPosition(Posizione posizione) {
         int row = posizione.getRow();
         int column = posizione.getColumn();
         return row >= 0 && row < DIMENSION && column >= 0 && column < DIMENSION;
     }
+
+
 }
