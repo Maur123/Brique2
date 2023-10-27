@@ -8,8 +8,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -63,28 +61,28 @@ public class BriqueTest {
     @Nested
     class UpdateSquareOnWhite2{
         Posizione pos = new Posizione(5, 5);
-        /*Posizione pos1 = new Posizione(4, 4);
+        Posizione pos1 = new Posizione(4, 4);
         Posizione pos2 = new Posizione(4, 6);
         Posizione pos3 = new Posizione(6, 4);
         Posizione pos4 = new Posizione(6, 6);
-        Posizione finals =  new Posizione(4, 5);*/
+        Posizione finals =  new Posizione(4, 5);
         Player player = Player.PLAYER2;
         @BeforeEach
         public void setup() {
             Mockito.when(chessboard.isValidPosition(Mockito.any(Posizione.class))).thenReturn(true);
-            Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
+            //Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
             Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(Color.WHITE);
-            /*Mockito.when(chessboard.checkSquarePlayer(pos)).thenReturn(player);
+            Mockito.when(chessboard.checkSquarePlayer(pos)).thenReturn(player);
             Mockito.when(chessboard.checkSquarePlayer(pos1)).thenReturn(player);
             Mockito.when(chessboard.checkSquarePlayer(pos2)).thenReturn(player);
             Mockito.when(chessboard.checkSquarePlayer(pos3)).thenReturn(player);
-            Mockito.when(chessboard.checkSquarePlayer(pos4)).thenReturn(player);*/
+            Mockito.when(chessboard.checkSquarePlayer(pos4)).thenReturn(player);
         }
         @Test
         public void itShouldUpdateTheSquarePlayer() {
             brique.checkMove2(pos,player);
 
-            Mockito.verify(chessboard).updateSquarePlayer(Mockito.any(Posizione.class), Mockito.any(Player.class));
+            Mockito.verify(chessboard).updateSquarePlayer(finals, player);
 
 
         }
@@ -131,16 +129,71 @@ public class BriqueTest {
     }
 
     @Nested
-    class checkVictory{
+    class checkNotVictory{
 
         Player player = Player.PLAYER1;
         @BeforeEach
         /*public void setup() {
             Mockito.when(chessboard.checkSquarePlayer(pos)).thenReturn(null);
         }*/
-        @Disabled
         @Test
-        public void checkvictoy(){
+        public void checkvictory(){
+
+            boolean victory;
+            victory = brique.checkVictoryPlayer1(player);
+
+            assertEquals(false, victory);
+        }
+
+
+    }
+
+    @Nested
+    class checkVictory{
+
+        Posizione pos = new Posizione(0, 6);
+        Posizione pos1 = new Posizione(1, 6);
+        Posizione pos2 = new Posizione(2, 6);
+        Posizione pos3 = new Posizione(3, 6);
+        Posizione pos4 = new Posizione(4, 6);
+        Posizione pos5 = new Posizione(5, 6);
+        Posizione pos6 = new Posizione(6, 6);
+        Posizione pos7 = new Posizione(7, 6);
+        Posizione pos8 = new Posizione(8, 6);
+        Posizione pos9 = new Posizione(9, 6);
+        Posizione pos10 =  new Posizione(10, 6);
+        Posizione pos11 = new Posizione(11, 6);
+        Posizione pos12 = new Posizione(12, 6);
+        Posizione pos13 = new Posizione(13, 6);
+        Posizione pos14 = new Posizione(14, 6);
+
+        Player player = Player.PLAYER1;
+        @BeforeEach
+        public void setup() {
+
+            Mockito.when(chessboard.isValidPosition(pos)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos1)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos2)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos3)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos4)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos5)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos6)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos7)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos8)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos9)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos10)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos11)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos12)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos13)).thenReturn(true);
+            Mockito.when(chessboard.isValidPosition(pos14)).thenReturn(true);
+            //Mockito.when(chessboard.isValidPosition(new Posizione(15, 6))).thenReturn(true);
+
+            Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
+            Mockito.when(chessboard.getDIMENSION()).thenReturn(15);
+        }
+
+        @Test
+        public void checkvictory(){
 
             boolean victory;
             victory = brique.checkVictoryPlayer1(player);
@@ -151,20 +204,36 @@ public class BriqueTest {
 
     }
 
+    @Disabled
+    @Test
+    public void singlecheckvictory(){
+
+        Chessboard chessboard = new Chessboard();
+
+        chessboard.updateSquarePlayer(new Posizione(0,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(1,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(2,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(3,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(4,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(5,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(6,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(7,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(8,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(9,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(10,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(11,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(12,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(13,6), Player.PLAYER1);
+        chessboard.updateSquarePlayer(new Posizione(14,6), Player.PLAYER1);
 
 
+        Brique brique = new Brique(chessboard);
 
-//    @Disabled
-//    @Test
-//    public void makemove2() {
-//        Brique brique = new Brique();
-//
-//        brique.updateSquarePlayer(new Posizione(4, 4), Player.PLAYER1);
-//        brique.makeMove(new Posizione(5, 5), Player.PLAYER1);
-//
-//        Player actualPlayer = brique.checkSquarePlayer(new Posizione(5, 4));
-//        Player expectedPlayer = Player.PLAYER1;
-//
-//        assertEquals(expectedPlayer, actualPlayer);
-//    }
+        boolean check;
+
+        check = brique.checkVictoryPlayer1(Player.PLAYER1);
+
+        assertEquals(true, check);
+    }
+
 }
