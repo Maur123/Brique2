@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="basic functions">
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="first Mock test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chessboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Posizione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Posizione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,11 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Brique2" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -76,10 +79,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/Brique2024&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/Brique2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.UpdateSquareOnWhite">
+  <component name="RunManager" selected="Gradle.Brique2 [test]">
     <configuration name="Brique2 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -101,7 +104,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BriqueTest.checkVictory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BriqueTest.testCheckMove" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +117,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest.checkVictory&quot;" />
+            <option value="&quot;BriqueTest.testCheckMove&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UpdateSquareOnWhite" />
         <item itemvalue="Gradle.Brique2 [test]" />
+        <item itemvalue="Gradle.BriqueTest.testCheckMove" />
+        <item itemvalue="Gradle.UpdateSquareOnWhite" />
         <item itemvalue="Gradle.WhenSquareIsNull" />
         <item itemvalue="Gradle.WhenSquareIsNull.itShouldUpdateTheSquarePlayer" />
-        <item itemvalue="Gradle.BriqueTest.checkVictory" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697147840782</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first Mock test">
+      <created>1697567856975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697567856975</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +253,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="basic functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic functions" />
+    <MESSAGE value="first Mock test" />
+    <option name="LAST_COMMIT_MESSAGE" value="first Mock test" />
   </component>
 </project>

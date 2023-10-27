@@ -1,5 +1,5 @@
 public class Chessboard {
-    private static final int DIMENSION = 15;
+    private final int DIMENSION = 15;
     private Square[][] table;
 
     public Chessboard(){
@@ -50,6 +50,10 @@ public class Chessboard {
             System.out.println("Posizione non valida");
             return null;
         }
+    }
+
+    public int getDIMENSION() {
+        return DIMENSION;
     }
 
     public boolean isValidPosition(Posizione posizione) {
