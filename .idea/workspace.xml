@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="Position update">
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="update checkVictory">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Matrix.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Matrix2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest.java" afterDir="false" />
@@ -77,10 +80,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/RubieriBrique"
+    "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/Brique2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager" selected="Gradle.Brique2 [test]">
+    <configuration name="BriqueTestFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BriqueTestFactory" />
+      <module name="Brique2.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Brique2 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -125,7 +136,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BriqueTest.testCheckMove" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BriqueTest.multiplecheckvictory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -138,7 +149,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest.testCheckMove&quot;" />
+            <option value="&quot;BriqueTest.multiplecheckvictory&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -148,7 +159,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UpdateSquareOnWhite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Multiplecheckvictory.firstrvictoryPlayer2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -161,30 +172,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest$UpdateSquareOnWhite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="WhenSquareIsNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;BriqueTest$WhenSquareIsNull&quot;" />
+            <option value="&quot;BriqueTest$Multiplecheckvictory.firstrvictoryPlayer2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,10 +185,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Brique2 [test]" />
+        <item itemvalue="Gradle.Multiplecheckvictory.firstrvictoryPlayer2" />
+        <item itemvalue="Gradle.BriqueTest.multiplecheckvictory" />
+        <item itemvalue="Application.BriqueTestFactory" />
         <item itemvalue="Gradle.BriqueTest.checkvictory" />
-        <item itemvalue="Gradle.BriqueTest.testCheckMove" />
-        <item itemvalue="Gradle.UpdateSquareOnWhite" />
-        <item itemvalue="Gradle.WhenSquareIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698412559924</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update checkVictory">
+      <created>1698418935289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698418935289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +255,7 @@
     <MESSAGE value="basic functions" />
     <MESSAGE value="first Mock test" />
     <MESSAGE value="Position update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Position update" />
+    <MESSAGE value="update checkVictory" />
+    <option name="LAST_COMMIT_MESSAGE" value="update checkVictory" />
   </component>
 </project>

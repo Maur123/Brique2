@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Brique {
     private int turn;
     private Chessboard chessboard;
@@ -12,14 +10,14 @@ public class Brique {
     public void makeMove(Posizione posizione, Player player) {
         if (this.chessboard.checkSquarePlayer(posizione) == null) { // Se la casella è libera
             this.chessboard.updateSquarePlayer(posizione, player);
-            checkMove2(posizione, player);
-            checkVictoryPlayer1(player);
+            checkMove(posizione, player);
+            checkVictoryPlayer(player);
         }
     }
-    public void checkMove(){
+    /*public void checkMove(){
         this.chessboard.updateSquarePlayer(new Posizione(1, 1), Player.PLAYER1);
-    }
-    public void checkMove2(Posizione position, Player player){
+    }*/
+    public void checkMove(Posizione position, Player player){
         int row = position.getRow();
         int column = position.getColumn();
 
@@ -55,7 +53,7 @@ public class Brique {
         return false;
     }
 
-    public boolean checkVictoryPlayer1(Player player) {
+    public boolean checkVictoryPlayer(Player player) {
 
         boolean[][] mask = new boolean[chessboard.getDIMENSION()][chessboard.getDIMENSION()];
         for (int i = 0; i < chessboard.getDIMENSION(); i++) {
@@ -64,9 +62,22 @@ public class Brique {
             }
         }
 
-        for (int j = 0; j < chessboard.getDIMENSION(); j++) {
-            if (chessboard.checkSquarePlayer(new Posizione(0, j)) == player) {
-                if (checkVictoryRecursive(player, new Posizione(0, j), mask)) {return true;}
+        if(player == Player.PLAYER1) {
+            for (int j = 0; j < chessboard.getDIMENSION(); j++) {
+                if (chessboard.checkSquarePlayer(new Posizione(0, j)) == player) {
+                    if (checkVictoryRecursive(player, new Posizione(0, j), mask)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        if(player == Player.PLAYER2) {
+            for (int i = 0; i < chessboard.getDIMENSION(); i++) {
+                if (chessboard.checkSquarePlayer(new Posizione(i, 0)) == player) {
+                    if (checkVictoryRecursive(player, new Posizione(i, 0), mask)) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -92,7 +103,10 @@ public class Brique {
             return false;
         }
 
-        if (position.getRow() == ((chessboard.getDIMENSION())-1)) {
+        if (position.getRow() == ((chessboard.getDIMENSION())-1) && player==Player.PLAYER1) {
+            return true;
+        }
+        if (position.getColumn() == ((chessboard.getDIMENSION())-1) && player==Player.PLAYER2) {
             return true;
         }
 

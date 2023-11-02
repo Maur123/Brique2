@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -80,7 +79,7 @@ public class BriqueTest {
         }
         @Test
         public void itShouldUpdateTheSquarePlayer() {
-            brique.checkMove2(pos,player);
+            brique.checkMove(pos,player);
 
             Mockito.verify(chessboard).updateSquarePlayer(finals, player);
 
@@ -99,9 +98,10 @@ public class BriqueTest {
             Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
             Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(Color.WHITE);
         }
+
         @Test
         public void itShouldUpdateTheSquarePlayer() {
-            brique.checkMove();
+            brique.checkMove(pos, player);
 
             Mockito.verify(chessboard).updateSquarePlayer(Mockito.any(Posizione.class), Mockito.any(Player.class));
 
@@ -110,6 +110,7 @@ public class BriqueTest {
 
     }
 
+    /*
     @Test
     public void testCheckMove() {
         // Crea un mock per la classe Chessboard
@@ -120,13 +121,13 @@ public class BriqueTest {
         Brique brique = new Brique(chessboard);
 
         // Chiamata al metodo checkMove
-        brique.checkMove();
+        brique.checkMove2();
 
         // Verifica che il metodo updateSquarePlayer sia stato chiamato con i parametri corretti
         verify(chessboard).updateSquarePlayer(new Posizione(1, 1), Player.PLAYER1);
 
         // Puoi aggiungere ulteriori asserzioni o verifiche a seconda delle tue esigenze
-    }
+    }*/
 
     @Nested
     class checkNotVictory{
@@ -140,7 +141,7 @@ public class BriqueTest {
         public void checkvictory(){
 
             boolean victory;
-            victory = brique.checkVictoryPlayer1(player);
+            victory = brique.checkVictoryPlayer(player);
 
             assertEquals(false, victory);
         }
@@ -196,7 +197,7 @@ public class BriqueTest {
         public void checkvictory(){
 
             boolean victory;
-            victory = brique.checkVictoryPlayer1(player);
+            victory = brique.checkVictoryPlayer(player);
 
             assertEquals(true, victory);
         }
@@ -204,7 +205,7 @@ public class BriqueTest {
 
     }
 
-    @Disabled
+
     @Test
     public void singlecheckvictory(){
 
@@ -231,9 +232,46 @@ public class BriqueTest {
 
         boolean check;
 
-        check = brique.checkVictoryPlayer1(Player.PLAYER1);
+        check = brique.checkVictoryPlayer(Player.PLAYER1);
 
         assertEquals(true, check);
+    }
+
+    @Nested
+    class Multiplecheckvictory {
+        @Test
+        public void firstvictoryPlayer1() {
+
+            String filePath = "src/test/resources/Matrix.txt";
+            Chessboard chessboard = new Chessboard();
+
+            chessboard = BriqueTestFactory.updateFullChessboard(chessboard, filePath);
+
+            Brique brique = new Brique(chessboard);
+
+            boolean check;
+
+            check = brique.checkVictoryPlayer(Player.PLAYER1);
+
+            assertEquals(true, check);
+        }
+
+        @Test
+        public void firstrvictoryPlayer2() {
+
+            String filePath = "src/test/resources/Matrix2.txt";
+            Chessboard chessboard = new Chessboard();
+
+            chessboard = BriqueTestFactory.updateFullChessboard(chessboard, filePath);
+
+            Brique brique = new Brique(chessboard);
+
+            boolean check;
+
+            check = brique.checkVictoryPlayer(Player.PLAYER2);
+
+            assertEquals(true, check);
+        }
     }
 
 }
