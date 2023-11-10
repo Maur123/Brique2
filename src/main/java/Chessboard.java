@@ -15,9 +15,9 @@ public class Chessboard {
         for (int i = 0; i < DIMENSION; i++) {
             for (int j = 0; j < DIMENSION; j++) {
                 if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1)) {
-                    table[i][j] = new Square(Color.BLACK);
+                    table[i][j] = new Square(ColorSquare.BLACK);
                 } else {
-                    table[i][j] = new Square(Color.WHITE);
+                    table[i][j] = new Square(ColorSquare.WHITE);
                 }
             }
         }
@@ -42,7 +42,7 @@ public class Chessboard {
         }
     }
 
-    public Color checkSquareColor(Posizione posizione) {
+    public ColorSquare checkSquareColor(Posizione posizione) {
         if (isValidPosition(posizione)) {
             return this.table[posizione.getRow()][posizione.getColumn()].getColor();
         } else {

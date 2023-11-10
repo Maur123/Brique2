@@ -29,11 +29,11 @@ public class ChessboardTest {
         Chessboard board = new Chessboard();
 
 
-        Color actualSquareColor = board.checkSquareColor(new Posizione(8,5));
+        ColorSquare actualSquareColor = board.checkSquareColor(new Posizione(8,5));
 
-        Color expectedColor = Color.WHITE;
+        ColorSquare expectedColorSquare = ColorSquare.WHITE;
 
-        assertEquals(expectedColor,actualSquareColor);
+        assertEquals(expectedColorSquare,actualSquareColor);
 
     }
 

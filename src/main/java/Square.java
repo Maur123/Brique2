@@ -1,9 +1,9 @@
 public class Square {
-    private Color color;
+    private ColorSquare colorSquare;
     private Player player;
 
-    public Square(Color color) {
-        this.color = color;
+    public Square(ColorSquare colorSquare) {
+        this.colorSquare = colorSquare;
     }
 
     public boolean isFree() {
@@ -18,7 +18,7 @@ public class Square {
         return player;
     }
 
-    public Color getColor() {
-        return color;
+    public ColorSquare getColor() {
+        return colorSquare;
     }
 }

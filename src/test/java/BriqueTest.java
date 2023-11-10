@@ -70,7 +70,7 @@ public class BriqueTest {
         public void setup() {
             Mockito.when(chessboard.isValidPosition(Mockito.any(Posizione.class))).thenReturn(true);
             //Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
-            Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(Color.WHITE);
+            Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(ColorSquare.WHITE);
             Mockito.when(chessboard.checkSquarePlayer(pos)).thenReturn(player);
             Mockito.when(chessboard.checkSquarePlayer(pos1)).thenReturn(player);
             Mockito.when(chessboard.checkSquarePlayer(pos2)).thenReturn(player);
@@ -96,7 +96,7 @@ public class BriqueTest {
         public void setup() {
             Mockito.when(chessboard.isValidPosition(Mockito.any(Posizione.class))).thenReturn(true);
             Mockito.when(chessboard.checkSquarePlayer(Mockito.any(Posizione.class))).thenReturn(player);
-            Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(Color.WHITE);
+            Mockito.when(chessboard.checkSquareColor(Mockito.any(Posizione.class))).thenReturn(ColorSquare.WHITE);
         }
 
         @Test

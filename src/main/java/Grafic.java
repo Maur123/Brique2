@@ -1,15 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ChessBoardGUI {
-    private JFrame frame;
-    private JPanel chessPanel;
-    private JButton startButton;
-    private JButton endButton;
-    private JLabel turnIndicator;
-    private JLabel playerNumber;
+public class Grafic {
+    public JFrame frame;
+    public JPanel chessPanel;
+    public JButton startButton;
+    public JButton endButton;
+    public JButton winEvent;
+    public JLabel turnIndicator;
+    public JLabel playerNumber;
 
-    public ChessBoardGUI() {
+    public Grafic() {
         frame = new JFrame("Chess Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
@@ -19,12 +20,15 @@ public class ChessBoardGUI {
         createChessBoard();
 
         // Creazione dei bottoni e indicatori
+        winEvent = new JButton("winEvent");
         startButton = new JButton("Inizia");
         endButton = new JButton("Termina");
         turnIndicator = new JLabel("Turno: ");
         playerNumber = new JLabel("Giocatore: ");
 
+
         JPanel buttonPanel = new JPanel();
+        buttonPanel.add(winEvent);
         buttonPanel.add(startButton);
         buttonPanel.add(endButton);
         buttonPanel.add(turnIndicator);
@@ -38,16 +42,22 @@ public class ChessBoardGUI {
     }
 
     private void createChessBoard() {
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
-                JPanel panel = new JPanel();
-                //panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-                chessPanel.add(panel);
+        for (int row = 0; row < 15; row++) {
+            for (int column = 0; column < 15; column++) {
+                JPanel squarePanel = new JPanel();
+                if (((row + column) % 2) == 0) {
+                    squarePanel.setBackground(new Color(139, 69, 19)); // Marrone
+                } else {
+                    squarePanel.setBackground(new Color(255, 248, 220)); // Crema
+                }
+                squarePanel.setOpaque(true); // Assicurarsi che il pannello mostri il colore di sfondo
+                squarePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                chessPanel.add(squarePanel);
             }
         }
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new ChessBoardGUI());
+        SwingUtilities.invokeLater(() -> new Grafic());
     }
 }

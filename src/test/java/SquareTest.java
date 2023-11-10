@@ -5,7 +5,7 @@ public class SquareTest {
 
     @Test
     public void testIsNotFree(){
-        Square square = new Square(Color.BLACK);
+        Square square = new Square(ColorSquare.BLACK);
 
         square.occupy(Player.PLAYER1);
 
@@ -17,7 +17,7 @@ public class SquareTest {
 
     @Test
     public void testIsFree(){
-        Square square = new Square(Color.BLACK);
+        Square square = new Square(ColorSquare.BLACK);
 
         boolean actualState = square.isFree();
         boolean expectedState = true;

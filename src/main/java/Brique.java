@@ -29,7 +29,7 @@ public class Brique {
         int row = position.getRow();
         int column = position.getColumn();
 
-        if (this.chessboard.checkSquareColor(position) == Color.WHITE) { // Casella bianca
+        if (this.chessboard.checkSquareColor(position) == ColorSquare.WHITE) { // Casella bianca
             if (isSamePlayer(new Posizione(row - 1, column - 1), player) || isSamePlayer(new Posizione(row - 1, column + 1), player)) {
                 this.chessboard.updateSquarePlayer(new Posizione(row - 1, column), player);
             }
@@ -41,7 +41,7 @@ public class Brique {
             }
 
 
-        } else if (this.chessboard.checkSquareColor(position) == Color.BLACK) { // Casella nera
+        } else if (this.chessboard.checkSquareColor(position) == ColorSquare.BLACK) { // Casella nera
             if (isSamePlayer(new Posizione(row + 1, column - 1), player) || isSamePlayer(new Posizione(row + 1, column + 1), player)) {
                 this.chessboard.updateSquarePlayer(new Posizione(row + 1, column), player);
             }
