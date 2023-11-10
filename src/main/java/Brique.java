@@ -11,9 +11,17 @@ public class Brique {
         if (this.chessboard.checkSquarePlayer(posizione) == null) { // Se la casella è libera
             this.chessboard.updateSquarePlayer(posizione, player);
             checkMove(posizione, player);
-            checkVictoryPlayer(player);
+            if(checkVictoryPlayer(player)){
+
+            }
+            updateTurn();
         }
     }
+
+    private void updateTurn() {
+        turn++;
+    }
+
     /*public void checkMove(){
         this.chessboard.updateSquarePlayer(new Posizione(1, 1), Player.PLAYER1);
     }*/
@@ -114,5 +122,9 @@ public class Brique {
                     checkVictoryRecursive(player, new Posizione(position.getRow() - 1, position.getColumn()), mask) ||
                     checkVictoryRecursive(player, new Posizione(position.getRow(), position.getColumn() + 1), mask) ||
                     checkVictoryRecursive(player, new Posizione(position.getRow() + 1, position.getColumn()), mask);
+    }
+
+    public int getTurn() {
+        return 1;
     }
 }
