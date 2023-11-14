@@ -4,9 +4,9 @@ import java.awt.*;
 public class Grafic {
     public JFrame frame;
     public JPanel chessPanel;
+    public JLabel[][] pieceLabels;
     public JButton startButton;
-    public JButton endButton;
-    public JButton winEvent;
+    public JButton quitButton;
     public JLabel turnIndicator;
     public JLabel playerNumber;
 
@@ -17,20 +17,19 @@ public class Grafic {
 
         // Creazione della scacchiera
         chessPanel = new JPanel(new GridLayout(15, 15));
+        pieceLabels = new JLabel[15][15];
         createChessBoard();
 
         // Creazione dei bottoni e indicatori
-        winEvent = new JButton("winEvent");
-        startButton = new JButton("Inizia");
-        endButton = new JButton("Termina");
-        turnIndicator = new JLabel("Turno: ");
-        playerNumber = new JLabel("Giocatore: ");
+        startButton = new JButton("Start");
+        quitButton = new JButton("Quit");
+        turnIndicator = new JLabel("Turn: 0");
+        playerNumber = new JLabel("Player: PLAYER-1");
 
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(winEvent);
         buttonPanel.add(startButton);
-        buttonPanel.add(endButton);
+        buttonPanel.add(quitButton);
         buttonPanel.add(turnIndicator);
         buttonPanel.add(playerNumber);
 
@@ -53,11 +52,35 @@ public class Grafic {
                 squarePanel.setOpaque(true); // Assicurarsi che il pannello mostri il colore di sfondo
                 squarePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 chessPanel.add(squarePanel);
+
+                JLabel pieceLabel = new JLabel();
+                pieceLabel.setSize(50, 50);  // Imposta la dimensione dell'etichetta
+                squarePanel.setLayout(new BorderLayout());
+                squarePanel.add(pieceLabel, BorderLayout.CENTER);
+
+                pieceLabels[row][column] = pieceLabel;
+
+                chessPanel.add(squarePanel);
             }
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Grafic());
+    public void restChessBoard() {
+        Component[] components = chessPanel.getComponents();
+        for (int i = 0; i < components.length; i++) {
+            JPanel squarePanel = (JPanel) components[i];
+            int row = i / 15;
+            int column = i % 15;
+
+            if (((row + column) % 2) == 0) {
+                squarePanel.setBackground(new Color(139, 69, 19)); // Marrone
+            } else {
+                squarePanel.setBackground(new Color(255, 248, 220)); // Crema
+            }
+        }
     }
+
+    /*public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new Grafic());
+    }*/
 }

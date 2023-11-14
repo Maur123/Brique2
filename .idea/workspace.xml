@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="first grafic">
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="second grafic">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pedinanera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pedinarossa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chessboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ColorSquare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Grafic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GraficGame.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GraficGame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SquareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SquareTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +85,17 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/RubieriGameBrique&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\IdeaProjects\Brique2\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Controller">
     <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ChessBoard" />
@@ -140,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Brique2 [test]" />
         <item itemvalue="Application.Controller" />
         <item itemvalue="Application.Grafic" />
         <item itemvalue="Application.ChessBoard" />
         <item itemvalue="Application.ChessboardUI" />
-        <item itemvalue="Gradle.Brique2 [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699612144575</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="second grafic">
+      <created>1699623776253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699623776254</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +243,7 @@
     <MESSAGE value="update checkVictory" />
     <MESSAGE value="first checkVictory" />
     <MESSAGE value="first grafic" />
-    <option name="LAST_COMMIT_MESSAGE" value="first grafic" />
+    <MESSAGE value="second grafic" />
+    <option name="LAST_COMMIT_MESSAGE" value="second grafic" />
   </component>
 </project>

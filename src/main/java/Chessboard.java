@@ -62,5 +62,14 @@ public class Chessboard {
         return row >= 0 && row < DIMENSION && column >= 0 && column < DIMENSION;
     }
 
+    //da testare...
+    public void cleanChessboard(){
+        for (int i = 0; i < DIMENSION; i++) {
+            for (int j = 0; j < DIMENSION; j++) {
+                this.table[i][j].makePlayerNull();
+            }
+        }
+    }
+
 
 }

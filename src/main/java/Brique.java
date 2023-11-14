@@ -4,7 +4,7 @@ public class Brique {
 
     public Brique(Chessboard chessboard) {
         this.chessboard = chessboard;
-        turn = 0;
+        turn = 1;
     }
 
     public void makeMove(Posizione posizione, Player player) {
@@ -16,10 +16,6 @@ public class Brique {
             }
             updateTurn();
         }
-    }
-
-    private void updateTurn() {
-        turn++;
     }
 
     /*public void checkMove(){
@@ -91,7 +87,6 @@ public class Brique {
         return false;
     }
 
-
     private boolean checkVictoryRecursive(Player player, Posizione position, boolean[][] mask) {
 
         System.out.println(position.getRow() + " e " + position.getColumn());
@@ -124,7 +119,16 @@ public class Brique {
                     checkVictoryRecursive(player, new Posizione(position.getRow() + 1, position.getColumn()), mask);
     }
 
+    private void updateTurn() {
+        turn++;
+    }
     public int getTurn() {
-        return 1;
+        return turn;
+    }
+
+    // da testare...
+    public void resetGame(){
+        turn = 1;
+        chessboard.cleanChessboard();
     }
 }
