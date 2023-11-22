@@ -1,73 +1,70 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ChessboardTest {
 
-    @Test
-    public void checkSquareState(){
+
+    @ParameterizedTest
+    @CsvSource({
+            "7,5" , "2,1" , "14,14"
+    })
+    public void checkSquareState(int row, int column){
         Chessboard board = new Chessboard();
 
-        var actualSquareValue = board.checkSquarePlayer(new Posizione(7,5));
+        var actualSquareValue = board.checkSquarePlayer(new Posizione(row,column));
 
         assertEquals(null,actualSquareValue);
-
     }
-    @Test
-    public void updateSquareState(){
+
+    @ParameterizedTest
+    @CsvSource({
+            "7,5,PLAYER1" , "2,1,PLAYER2" , "14,14,PLAYER2"
+    })
+    public void updateSquareState(int row, int column, Player player){
         Chessboard board = new Chessboard();
 
-        board.updateSquarePlayer(new Posizione(7,5), Player.PLAYER1);
+        board.updateSquarePlayer(new Posizione(row,column), player);
 
-        Player actualPlayer = board.checkSquarePlayer(new Posizione(7,5));
-        Player expectedPlayer = Player.PLAYER1;
+        Player actualPlayer = board.checkSquarePlayer(new Posizione(row,column));
+        Player expectedPlayer = player;
 
         assertEquals(expectedPlayer,actualPlayer);
     }
-    @Test
-    public void checkSquareColor(){
+
+    @ParameterizedTest
+    @CsvSource({
+            "7,4,WHITE" , "2,11,WHITE" , "14,14,BLACK"
+    })
+    public void checkSquareColor(int row, int column, ColorSquare color){
         Chessboard board = new Chessboard();
 
 
-        ColorSquare actualSquareColor = board.checkSquareColor(new Posizione(8,5));
+        ColorSquare actualSquareColor = board.checkSquareColor(new Posizione(row,column));
 
-        ColorSquare expectedColorSquare = ColorSquare.WHITE;
+        ColorSquare expectedColorSquare = color;
 
         assertEquals(expectedColorSquare,actualSquareColor);
 
     }
 
-    @Test
-    public void checkImpossiblePosition(){
+    @ParameterizedTest
+    @CsvSource({
+            "7,4,true" , "2,11,true" , "14,25,false" , "-6,4,false"
+    })
+    public void checkPosition(int row, int column, boolean expect){
         Chessboard board = new Chessboard();
 
 
-        Posizione position = new Posizione(-4,5);
+        Posizione position = new Posizione(row,column);
 
         boolean checkposition = board.isValidPosition(position);
 
-        assertNotEquals(true,checkposition);
-    }
-    @Test
-    public void checkImpossiblePosition2(){
-        Chessboard board = new Chessboard();
-
-
-        Posizione position = new Posizione(14,25);
-
-        boolean checkposition = board.isValidPosition(position);
-
-        assertNotEquals(true,checkposition);
-    }
-    @Test
-    public void checkPossiblePosition(){
-        Chessboard board = new Chessboard();
-
-
-        Posizione position = new Posizione(4,5);
-
-        boolean checkposition = board.isValidPosition(position);
-
-        assertEquals(true,checkposition);
+        assertEquals(expect,checkposition);
     }
 }
