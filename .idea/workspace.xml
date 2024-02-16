@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="third grafic with pawn">
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="victoryChecker">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BriqueTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BriqueTest3withCSVsources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BriqueTest4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ChessboardTestDataFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/MatrixAllPlayer1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/MatrixForPlayer1Black.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/MatrixForPlayer1White.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/MatrixForPlayer2Black.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/MatrixForPlayer2White.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChessboardUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChessboardUIProva1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chessboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChessboardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SquareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SquareTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VictoryCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VictoryCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/MatrixWinningPlayer1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Matrix2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/MatrixWinningPlayer2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,77 +93,149 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/Brique2024",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/Brique2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\IdeaProjects\Brique2\src\test\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\IdeaProjects\Brique2\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.Brique2 [test]">
-    <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ChessBoard" />
-      <module name="Brique2.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChessboardUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ChessboardUI" />
-      <module name="Brique2.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller" />
-      <module name="Brique2.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Grafic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Grafic" />
-      <module name="Brique2.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Brique2 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TestManageMoveEffects">
+    <configuration name="TestDataFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BriqueTest3$TestDataFactory&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDataFactory.testDataFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BriqueTest3$TestDataFactory.testDataFactory&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestManageMoveEffects" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BriqueTest4$TestManageMoveEffects&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BriqueTest3$TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestManageMoveEffects.itShouldUpdateSquare" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BriqueTest4$TestManageMoveEffects.itShouldUpdateSquare&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Brique2 [test]" />
-        <item itemvalue="Application.Controller" />
-        <item itemvalue="Application.Grafic" />
-        <item itemvalue="Application.ChessBoard" />
-        <item itemvalue="Application.ChessboardUI" />
+        <item itemvalue="Gradle.TestManageMoveEffects" />
+        <item itemvalue="Gradle.TestManageMoveEffects.itShouldUpdateSquare" />
+        <item itemvalue="Gradle.TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1" />
+        <item itemvalue="Gradle.TestDataFactory" />
+        <item itemvalue="Gradle.TestDataFactory.testDataFactory" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +311,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699968516542</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="parametrized test chessboard">
+      <created>1700668664912</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700668664912</updated>
+    </task>
+    <task id="LOCAL-00011" summary="victoryChecker">
+      <created>1703001154112</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703001154112</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,6 +349,8 @@
     <MESSAGE value="first grafic" />
     <MESSAGE value="second grafic" />
     <MESSAGE value="third grafic with pawn" />
-    <option name="LAST_COMMIT_MESSAGE" value="third grafic with pawn" />
+    <MESSAGE value="parametrized test chessboard" />
+    <MESSAGE value="victoryChecker" />
+    <option name="LAST_COMMIT_MESSAGE" value="victoryChecker" />
   </component>
 </project>

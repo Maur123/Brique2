@@ -1,19 +1,20 @@
 public class Chessboard {
-    private final int DIMENSION = 15;
     private Square[][] table;
+    private int chessboardDimension;
 
-    public Chessboard(){
+    public Chessboard(int chessboardDimension) {
+        this.chessboardDimension = chessboardDimension;
         createChessboard();
         initChessboard();
     }
 
     private void createChessboard() {
-        this.table = new Square[DIMENSION][DIMENSION];
+        this.table = new Square[chessboardDimension][chessboardDimension];
     }
 
     private void initChessboard() {
-        for (int i = 0; i < DIMENSION; i++) {
-            for (int j = 0; j < DIMENSION; j++) {
+        for (int i = 0; i < chessboardDimension; i++) {
+            for (int j = 0; j < chessboardDimension; j++) {
                 if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1)) {
                     table[i][j] = new Square(ColorSquare.BLACK);
                 } else {
@@ -23,18 +24,27 @@ public class Chessboard {
         }
     }
 
-    public void updateSquarePlayer(Posizione posizione, Player player) {
+    private Square getSquare(Posizione posizione) {
+        return this.table[posizione.getRow()][posizione.getColumn()];
+    }
+
+    public int getChessboardDimension(){
+        return chessboardDimension;
+    }
+
+    public ColorSquare checkSquareColor(Posizione posizione) {
         if (isValidPosition(posizione)) {
-            this.table[posizione.getRow()][posizione.getColumn()].occupy(player);
+            return getSquare(posizione).getColor();
         } else {
             // Tratta il caso in cui la posizione non sia valida
             System.out.println("Posizione non valida");
+            return null;
         }
     }
 
     public Player checkSquarePlayer(Posizione posizione) {
         if (isValidPosition(posizione)) {
-            return this.table[posizione.getRow()][posizione.getColumn()].getPlayer();
+            return getSquare(posizione).getPlayer();
         } else {
             // Tratta il caso in cui la posizione non sia valida
             System.out.println("Posizione non valida");
@@ -42,34 +52,36 @@ public class Chessboard {
         }
     }
 
-    public ColorSquare checkSquareColor(Posizione posizione) {
+    public void updateSquarePlayer(Posizione posizione, Player player) {
         if (isValidPosition(posizione)) {
-            return this.table[posizione.getRow()][posizione.getColumn()].getColor();
+            getSquare(posizione).occupy(player);
         } else {
-            // Tratta il caso in cui la posizione non sia valida
             System.out.println("Posizione non valida");
-            return null;
         }
-    }
-
-    public int getDIMENSION() {
-        return DIMENSION;
     }
 
     public boolean isValidPosition(Posizione posizione) {
         int row = posizione.getRow();
         int column = posizione.getColumn();
-        return row >= 0 && row < DIMENSION && column >= 0 && column < DIMENSION;
+        return row >= 0 && row < chessboardDimension && column >= 0 && column < chessboardDimension;
     }
 
-    //da testare...
-    public void cleanChessboard(){
-        for (int i = 0; i < DIMENSION; i++) {
-            for (int j = 0; j < DIMENSION; j++) {
+    public boolean isSquareOfPlayer(Posizione posizione, Player player) {
+        return this.checkSquarePlayer(posizione) == player;
+    }
+
+    public boolean isSquareAvailable(Posizione posizione) {
+        return getSquare(posizione).isFree();
+    }
+
+    public void cleanChessboard() {
+        for (int i = 0; i < chessboardDimension; i++) {
+            for (int j = 0; j < chessboardDimension; j++) {
                 this.table[i][j].makePlayerNull();
             }
         }
     }
+
 
 
 }

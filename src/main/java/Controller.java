@@ -1,3 +1,4 @@
+/*
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -98,17 +99,18 @@ public class Controller {
     }
 
     private void checkAndUpdateBoardGraphics() {
-        for (int row = 0; row < chessboard.getDIMENSION(); row++) {
-            for (int col = 0; col < chessboard.getDIMENSION(); col++) {
+        for (int row = 0; row < chessboard.getChessboardDimension(); row++) {
+            for (int col = 0; col < chessboard.getChessboardDimension(); col++) {
                 Player player = chessboard.checkSquarePlayer(new Posizione(row, col));
-                JPanel squarePanel = (JPanel) grafic.chessPanel.getComponent(row * chessboard.getDIMENSION() + col);
+                JPanel squarePanel = (JPanel) grafic.chessPanel.getComponent(row * chessboard.getChessboardDimension() + col);
                 JLabel pieceLabel = grafic.pieceLabels[row][col];
 
-                /*if (player == Player.PLAYER1) {
+if (player == Player.PLAYER1) {
                     squarePanel.setBackground(Color.BLACK);
                 } else if (player == Player.PLAYER2) {
                     squarePanel.setBackground(Color.RED);
-                }*/
+                }
+
 
                 if (player == Player.PLAYER1) {
                     //squarePanel.setBackground(Color.BLACK);
@@ -130,3 +132,4 @@ public class Controller {
         });
     }
 }
+*/

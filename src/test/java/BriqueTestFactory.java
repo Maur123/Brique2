@@ -41,7 +41,7 @@ public class BriqueTestFactory {
 
     /*public static void main(String[] args) {
         Chessboard chessboard = new Chessboard();
-        String filePath = "src/test/resources/Matrix.txt"; // Inserisci il percorso del tuo file
+        String filePath = "src/test/resources/MatrixWinningPlayer1.txt"; // Inserisci il percorso del tuo file
         chessboard = updateFullChessboard(chessboard, filePath);
         System.out.println(chessboard);
     }*/
