@@ -2,9 +2,12 @@ public class Brique {
     private int turn;
     private Chessboard chessboard;
 
+    private boolean victory;
+
     public Brique(Chessboard chessboard) {
         this.chessboard = chessboard;
         turn = 1;
+        victory = false;
     }
 
     public void makeMove(Posizione posizione, Player player) {
@@ -13,7 +16,7 @@ public class Brique {
             manageMoveEffects(posizione, player);
             VictoryChecker vc = new VictoryChecker(player, chessboard);
             if (vc.hasPlayerWon()) {
-
+                victory = true;
             }else{
                 updateTurn();
             }
@@ -56,8 +59,17 @@ public class Brique {
         return turn;
     }
 
+    public boolean isVictory() {
+        return victory;
+    }
+
     public void resetGame() {
         turn = 1;
+        victory = false;
         chessboard.cleanChessboard();
+    }
+
+    public Chessboard getChessboard() {
+        return chessboard;
     }
 }

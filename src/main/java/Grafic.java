@@ -6,6 +6,7 @@ public class Grafic {
     public JPanel chessPanel;
     public JLabel[][] pieceLabels;
     public JButton startButton;
+    public JButton restartButton;
     public JButton quitButton;
     public JLabel turnIndicator;
     public JLabel playerNumber;
@@ -21,14 +22,16 @@ public class Grafic {
         createChessBoard();
 
         // Creazione dei bottoni e indicatori
-        startButton = new JButton("Start");
+        //startButton = new JButton("Start");
+        restartButton = new JButton("Restart");
         quitButton = new JButton("Quit");
         turnIndicator = new JLabel("Turn: 0");
         playerNumber = new JLabel("Player: PLAYER-1");
 
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(startButton);
+        //buttonPanel.add(startButton);
+        buttonPanel.add(restartButton);
         buttonPanel.add(quitButton);
         buttonPanel.add(turnIndicator);
         buttonPanel.add(playerNumber);
@@ -65,7 +68,18 @@ public class Grafic {
         }
     }
 
-    public void restChessBoard() {
+    public void resetChessBoard() {
+        // Rimuovi tutti i pezzi dalla scacchiera
+        for (int row = 0; row < 15; row++) {
+            for (int column = 0; column < 15; column++) {
+                pieceLabels[row][column].setIcon(null); // Rimuovi l'icona del pezzo
+            }
+        }
+        // Ricrea la scacchiera
+        //createChessBoard();
+    }
+
+    /*public void restChessBoard() {
         Component[] components = chessPanel.getComponents();
         for (int i = 0; i < components.length; i++) {
             JPanel squarePanel = (JPanel) components[i];
@@ -78,9 +92,5 @@ public class Grafic {
                 squarePanel.setBackground(new Color(255, 248, 220)); // Crema
             }
         }
-    }
-
-    /*public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Grafic());
     }*/
 }

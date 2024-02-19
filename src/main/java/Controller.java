@@ -1,135 +1,169 @@
-/*
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Controller {
-    private Grafic grafic;
     private Brique brique;
-    private Chessboard chessboard;
+    private Grafic grafic;
 
-    public Controller(Grafic grafic, Brique brique, Chessboard chessboard) {
-        this.grafic = grafic;
-        this.brique = brique;
-        this.chessboard = chessboard;
+    public Controller() {
+        Chessboard chessboard = new Chessboard(15); // Assuming Chessboard constructor exists
+        brique = new Brique(chessboard);
+        grafic = new Grafic();
 
-        grafic.startButton.addActionListener(new ActionListener() {
+        /*grafic.startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                brique.resetGame();
-                grafic.restChessBoard();
-                System.out.println("Inizia il gioco!");
+                startGame();
+            }
+        });*/
+
+        grafic.restartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                restartGame();
             }
         });
 
         grafic.quitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Fine del gioco!");
-                grafic.frame.dispose(); // Chiude la finestra
-                System.exit(0); // Termina l'applicazione
+                quitGame();
             }
         });
 
-        for (Component component : grafic.chessPanel.getComponents()) {
-            if (component instanceof JPanel) {
-                JPanel panel = (JPanel) component;
-                panel.addMouseListener(new java.awt.event.MouseAdapter() {
+        // Aggiungi azioni per le caselle della scacchiera
+        for (int row = 0; row < 15; row++) {
+            for (int column = 0; column < 15; column++) {
+                final int r = row;
+                final int c = column;
+                grafic.pieceLabels[row][column].addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
-                        // Ottieni la posizione del pannello cliccato
-                        int row = panel.getY() / panel.getHeight();
-                        int col = panel.getX() / panel.getWidth();
-                        System.out.println("Hai cliccato sulla casella: " + row + ", " + col);
-
-                        // Chiamata al metodo makeMove di Brique
-                        if(brique.getTurn() % 2 == 1) {
-
-                            brique.makeMove(new Posizione(row, col), Player.PLAYER1);
-
-                            //controllo tutte le caselle e le aggiorno
-                            checkAndUpdateBoardGraphics();
-
-                            if(brique.checkVictoryPlayer(Player.PLAYER1)){
-                                JOptionPane.showConfirmDialog(grafic.frame, "PLAYER-1 WINS!!!", "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                                int result = JOptionPane.showConfirmDialog(grafic.frame, "PLAYER-1 WINS!!!", "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                                if (result == JOptionPane.OK_OPTION) {
-                                    // Azione da eseguire quando l'utente clicca "OK"
-                                    System.out.println("L'utente ha cliccato su OK");
-                                    brique.resetGame();
-                                    grafic.restChessBoard();
-                                }
-                                System.out.println("Finisce il gioco!");
-                            }
-                        }
-                        else{
-
-                            brique.makeMove(new Posizione(row, col), Player.PLAYER2);
-
-                            //controllo tutte le caselle e le aggiorno
-                            checkAndUpdateBoardGraphics();
-
-                            if(brique.checkVictoryPlayer(Player.PLAYER2)){
-                                JOptionPane.showConfirmDialog(grafic.frame, "PLAYER-2 WINS!!!", "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                                int result = JOptionPane.showConfirmDialog(grafic.frame, "PLAYER-2 WINS!!!", "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                                if (result == JOptionPane.OK_OPTION) {
-                                    // Azione da eseguire quando l'utente clicca "OK"
-                                    System.out.println("L'utente ha cliccato su OK");
-                                    brique.resetGame();
-                                    grafic.restChessBoard();
-                                }
-                                System.out.println("Finisce il gioco!");
-                            }
-                        }
-
-                        grafic.turnIndicator.setText("Turn: " + brique.getTurn());
-
-                        //update Label PlayerNumber
-                        if(brique.getTurn() % 2 == 1) {
-                            grafic.playerNumber.setText("Player: PLAYER-2");
-                        }
-                        else{
-                            grafic.playerNumber.setText("Player: PLAYER-1");
-                        }
+                        handleSquareClick(new Posizione(r, c));
                     }
                 });
             }
         }
-
     }
 
-    private void checkAndUpdateBoardGraphics() {
-        for (int row = 0; row < chessboard.getChessboardDimension(); row++) {
-            for (int col = 0; col < chessboard.getChessboardDimension(); col++) {
-                Player player = chessboard.checkSquarePlayer(new Posizione(row, col));
-                JPanel squarePanel = (JPanel) grafic.chessPanel.getComponent(row * chessboard.getChessboardDimension() + col);
-                JLabel pieceLabel = grafic.pieceLabels[row][col];
+    /*private void startGame() {
+        brique.resetGame();
+        grafic.resetChessBoard();
+        updateTurnIndicator();
+    }*/
 
-if (player == Player.PLAYER1) {
-                    squarePanel.setBackground(Color.BLACK);
-                } else if (player == Player.PLAYER2) {
-                    squarePanel.setBackground(Color.RED);
-                }
+    private void restartGame() {
+        brique.resetGame();
+        grafic.resetChessBoard();
+        updateTurnIndicatorLabel();
+        updatePlayerNumberLabel();
+    }
+
+    private void quitGame() {
+        System.exit(0);
+    }
+
+    private void handleSquareClick(Posizione posizione) {
+        Player currentPlayer = getCurrentPlayer();
+        brique.makeMove(posizione, currentPlayer);
+        updateTurnIndicatorLabel();
+        updatePlayerNumberLabel();
+        updateChessboard();
+        checkVictory();
+    }
+
+    private Player getCurrentPlayer() {
+        return (brique.getTurn() % 2 == 0) ? Player.PLAYER2 : Player.PLAYER1;
+    }
+
+//    private void updateChessboard2() {
+//        // Aggiorna la scacchiera sulla GUI in base alla disposizione delle pedine
+//        for (int row = 0; row < 15; row++) {
+//            for (int column = 0; column < 15; column++) {
+//                Player player = brique.getChessboard().getSquarePlayer(new Posizione(row, column));
+//                if (player != null) {
+//                    // Aggiorna la GUI con la pedina del giocatore corrispondente
+//                    // Ad esempio: grafic.pieceLabels[row][column].setIcon(new ImageIcon(player.getPieceIcon()));
+//                }
+//            }
+//        }
+//    }
+
+    private void updateTurnIndicatorLabel() {
+        grafic.turnIndicator.setText("Turn: " + brique.getTurn());
+    }
+
+    private void updatePlayerNumberLabel() {
+        Player currentPlayer = getCurrentPlayer();
+        String playerText;
+        if (currentPlayer == Player.PLAYER1) {
+            playerText = "PLAYER-1";
+        } else {
+            playerText = "PLAYER-2";
+        }
+        grafic.playerNumber.setText("Player: " + playerText);
+    }
 
 
-                if (player == Player.PLAYER1) {
-                    //squarePanel.setBackground(Color.BLACK);
-                    pieceLabel.setIcon(new ImageIcon(getClass().getResource("/pedinarossa.png")));
-                } else if (player == Player.PLAYER2) {
-                    //squarePanel.setBackground(Color.RED);
-                    pieceLabel.setIcon(new ImageIcon(getClass().getResource("/pedinanera.png")));
+    private void updateChessboard() {
+        // Aggiorna la scacchiera sulla GUI in base alla disposizione delle pedine
+        for (int row = 0; row < brique.getChessboard().getChessboardDimension(); row++) {
+            for (int column = 0; column < brique.getChessboard().getChessboardDimension(); column++) {
+                Player player = brique.getChessboard().checkSquarePlayer(new Posizione(row, column));
+                if (player != null) {
+                    // Ottieni l'icona associata al giocatore
+                    ImageIcon playerIcon = getPlayerIcon(player);
+                    // Aggiorna la GUI con l'icona del giocatore sulla casella corrispondente
+                    grafic.pieceLabels[row][column].setIcon(playerIcon);
+                } else {
+                    // Se non c'è nessun giocatore sulla casella, rimuovi l'icona
+                    grafic.pieceLabels[row][column].setIcon(null);
                 }
             }
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Grafic grafic = new Grafic();
-            Chessboard chessboard = new Chessboard();
-            Brique brique = new Brique(chessboard);
-            Controller controller = new Controller(grafic, brique, chessboard);
+    // Metodo per ottenere l'icona associata al giocatore
+    private ImageIcon getPlayerIcon(Player player) {
+        // Supponiamo che ogni giocatore abbia un'icona associata alla sua pedina
+        // Esempio di implementazione:
+        if (player == Player.PLAYER1) {
+            return new ImageIcon(getClass().getResource("/pedinarossa.png"));
+//            return new ImageIcon("path_to_player1_icon.png");
+//            pieceLabel.setIcon(new ImageIcon(getClass().getResource("/pedinarossa.png")));
+        } else if (player == Player.PLAYER2) {
+            return new ImageIcon(getClass().getResource("/pedinanera.png"));
+            //return new ImageIcon("path_to_player2_icon.png");
+        } else {
+            // Se non è possibile determinare l'icona, restituisci null
+            return null;
+        }
+    }
+
+    private void checkVictory() {
+        if (brique.isVictory()) {
+            Player currentPlayer = getCurrentPlayer();
+            String playerText;
+            if (currentPlayer == Player.PLAYER1) {
+                playerText = "PLAYER-1";
+            } else {
+                playerText = "PLAYER-2";
+            }
+            JOptionPane.showMessageDialog(null, playerText+" IS THE WINNER!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    public void start() {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                grafic.frame.setVisible(true);
+            }
         });
     }
+
+    public static void main(String[] args) {
+        Controller controller = new Controller();
+        controller.start();
+    }
 }
-*/
