@@ -35,7 +35,6 @@ public class VictoryCheckerTest {
     private static Stream<Arguments> provideChessboardAndWinningPlayer() {
         return Stream.of(
                 Arguments.of(ChessboardTestDataFactory.createPlayer1WinningChessboard(), Player.PLAYER1),
-                //Arguments.of(ChessboardTestDataFactory.createPlayer1WinningChessboard2(), Player.PLAYER1),
                 Arguments.of(ChessboardTestDataFactory.createPlayer2WinningChessboard(), Player.PLAYER2)
         );
     }
@@ -43,7 +42,6 @@ public class VictoryCheckerTest {
     private static Stream<Arguments> provideChessboardAndNotWinningPlayer() {
         return Stream.of(
                 Arguments.of(ChessboardTestDataFactory.createPlayer1WinningChessboard(), Player.PLAYER2),
-                //Arguments.of(ChessboardTestDataFactory.createPlayer1WinningChessboard2(), Player.PLAYER2),
                 Arguments.of(ChessboardTestDataFactory.createPlayer2WinningChessboard(), Player.PLAYER1)
         );
     }

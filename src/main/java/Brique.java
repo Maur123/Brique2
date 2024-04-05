@@ -1,7 +1,6 @@
 public class Brique {
+    private final Chessboard chessboard;
     private int turn;
-    private Chessboard chessboard;
-
     private boolean victory;
 
     public Brique(Chessboard chessboard) {
@@ -10,43 +9,43 @@ public class Brique {
         victory = false;
     }
 
-    public void makeMove(Posizione posizione, Player player) {
-        if (chessboard.isSquareAvailable(posizione)) { // Se la casella è libera
-            chessboard.updateSquarePlayer(posizione, player);
-            manageMoveEffects(posizione, player);
+    public void makeMove(Position position, Player player) {
+        if (chessboard.isSquareAvailable(position)) {
+            chessboard.updateSquarePlayer(position, player);
+            manageMoveEffects(position, player);
             VictoryChecker vc = new VictoryChecker(player, chessboard);
             if (vc.hasPlayerWon()) {
                 victory = true;
-            }else{
+            } else {
                 updateTurn();
             }
         }
     }
 
-    public void manageMoveEffects(Posizione position, Player player) {
+    public void manageMoveEffects(Position position, Player player) {
         int row = position.getRow();
         int column = position.getColumn();
 
-        if (this.chessboard.checkSquareColor(position) == ColorSquare.WHITE) { // Casella bianca
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row - 1, column - 1), player) || this.chessboard.isSquareOfPlayer(new Posizione(row - 1, column + 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row - 1, column), player);
+        if (this.chessboard.checkSquareColor(position) == ColorSquare.WHITE) {
+            if (this.chessboard.isSquareOfPlayer(new Position(row - 1, column - 1), player) || this.chessboard.isSquareOfPlayer(new Position(row - 1, column + 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row - 1, column), player);
             }
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row + 1, column - 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row, column - 1), player);
+            if (this.chessboard.isSquareOfPlayer(new Position(row + 1, column - 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row, column - 1), player);
             }
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row + 1, column + 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row, column + 1), player);
+            if (this.chessboard.isSquareOfPlayer(new Position(row + 1, column + 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row, column + 1), player);
             }
 
-        } else if (this.chessboard.checkSquareColor(position) == ColorSquare.BLACK) { // Casella nera
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row + 1, column - 1), player) || this.chessboard.isSquareOfPlayer(new Posizione(row + 1, column + 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row + 1, column), player);
+        } else if (this.chessboard.checkSquareColor(position) == ColorSquare.BLACK) {
+            if (this.chessboard.isSquareOfPlayer(new Position(row + 1, column - 1), player) || this.chessboard.isSquareOfPlayer(new Position(row + 1, column + 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row + 1, column), player);
             }
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row - 1, column - 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row, column - 1), player);
+            if (this.chessboard.isSquareOfPlayer(new Position(row - 1, column - 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row, column - 1), player);
             }
-            if (this.chessboard.isSquareOfPlayer(new Posizione(row - 1, column + 1), player)) {
-                this.chessboard.updateSquarePlayer(new Posizione(row, column + 1), player);
+            if (this.chessboard.isSquareOfPlayer(new Position(row - 1, column + 1), player)) {
+                this.chessboard.updateSquarePlayer(new Position(row, column + 1), player);
             }
         }
     }

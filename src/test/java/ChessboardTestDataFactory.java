@@ -55,10 +55,10 @@ public class ChessboardTestDataFactory {
 
                     int value = Integer.parseInt(token);
                     if (value == 1) {
-                        chessboard.updateSquarePlayer(new Posizione(row, column), Player.PLAYER1);
+                        chessboard.updateSquarePlayer(new Position(row, column), Player.PLAYER1);
                     }
                     if (value == 2) {
-                        chessboard.updateSquarePlayer(new Posizione(row, column), Player.PLAYER2);
+                        chessboard.updateSquarePlayer(new Position(row, column), Player.PLAYER2);
                     }
                     column++;
                 }

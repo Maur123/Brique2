@@ -1,9 +1,10 @@
 import java.util.Objects;
 
-public class Posizione {
-    private int row;
-    private int column;
-    public Posizione(int row, int column) {
+public class Position {
+    private final int row;
+    private final int column;
+
+    public Position(int row, int column) {
         this.row = row;
         this.column = column;
     }
@@ -20,8 +21,8 @@ public class Posizione {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Posizione posizione = (Posizione) o;
-        return row == posizione.row && column == posizione.column;
+        Position position = (Position) o;
+        return row == position.row && column == position.column;
     }
 
     @Override

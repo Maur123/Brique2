@@ -19,7 +19,7 @@ public class VictoryChecker {
 
         if (player == Player.PLAYER1) {
             for (int j = 0; j < chessboard.getChessboardDimension(); j++) {
-                Posizione startingPosition = new Posizione(0, j);
+                Position startingPosition = new Position(0, j);
                 if (hasPlayerWonFromPosition(startingPosition)) {
                     return true;
                 }
@@ -27,7 +27,7 @@ public class VictoryChecker {
         }
         if (player == Player.PLAYER2) {
             for (int i = 0; i < chessboard.getChessboardDimension(); i++) {
-                Posizione startingPosition = new Posizione(i, 0);
+                Position startingPosition = new Position(i, 0);
                 if (hasPlayerWonFromPosition(startingPosition)) {
                     return true;
                 }
@@ -36,12 +36,12 @@ public class VictoryChecker {
         return false;
     }
 
-    private boolean hasPlayerWonFromPosition(Posizione startingPosition) {
+    private boolean hasPlayerWonFromPosition(Position startingPosition) {
         return chessboard.isSquareOfPlayer(startingPosition, player)
                 && checkVictoryRecursive(startingPosition);
     }
 
-    private boolean checkVictoryRecursive(Posizione position) {
+    private boolean checkVictoryRecursive(Position position) {
         if (!chessboard.isValidPosition(position)) {
             return false;
         }
@@ -63,13 +63,13 @@ public class VictoryChecker {
             return true;
         }
 
-        return checkVictoryRecursive(new Posizione(position.getRow(), position.getColumn() - 1)) ||
-                checkVictoryRecursive(new Posizione(position.getRow() - 1, position.getColumn())) ||
-                checkVictoryRecursive(new Posizione(position.getRow(), position.getColumn() + 1)) ||
-                checkVictoryRecursive(new Posizione(position.getRow() + 1, position.getColumn()));
+        return checkVictoryRecursive(new Position(position.getRow(), position.getColumn() - 1)) ||
+                checkVictoryRecursive(new Position(position.getRow() - 1, position.getColumn())) ||
+                checkVictoryRecursive(new Position(position.getRow(), position.getColumn() + 1)) ||
+                checkVictoryRecursive(new Position(position.getRow() + 1, position.getColumn()));
     }
 
-    private boolean isPositionAlreadyChecked(Posizione position) {
+    private boolean isPositionAlreadyChecked(Position position) {
         return mask[position.getRow()][position.getColumn()];
     }
 }

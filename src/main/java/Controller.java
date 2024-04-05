@@ -6,7 +6,7 @@ public class Controller {
     private final Grafic grafic;
 
     public Controller() {
-        Chessboard chessboard = new Chessboard(15); // Assuming Chessboard constructor exists
+        Chessboard chessboard = new Chessboard(15);
         brique = new Brique(chessboard);
         grafic = new Grafic();
 
@@ -14,14 +14,13 @@ public class Controller {
 
         grafic.quitButton.addActionListener(e -> quitGame());
 
-        // Aggiungi azioni per le caselle della scacchiera
         for (int row = 0; row < 15; row++) {
             for (int column = 0; column < 15; column++) {
                 final int r = row;
                 final int c = column;
                 grafic.pieceLabels[row][column].addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
-                        handleSquareClick(new Posizione(r, c));
+                        handleSquareClick(new Position(r, c));
                     }
                 });
             }
@@ -39,9 +38,9 @@ public class Controller {
         System.exit(0);
     }
 
-    private void handleSquareClick(Posizione posizione) {
+    private void handleSquareClick(Position position) {
         Player currentPlayer = getCurrentPlayer();
-        brique.makeMove(posizione, currentPlayer);
+        brique.makeMove(position, currentPlayer);
         updateTurnIndicatorLabel();
         updatePlayerNumberLabel();
         updateChessboard();
@@ -69,10 +68,9 @@ public class Controller {
 
 
     private void updateChessboard() {
-        // Aggiorna la scacchiera in base alla disposizione delle pedine
         for (int row = 0; row < brique.getChessboard().getChessboardDimension(); row++) {
             for (int column = 0; column < brique.getChessboard().getChessboardDimension(); column++) {
-                Player player = brique.getChessboard().checkSquarePlayer(new Posizione(row, column));
+                Player player = brique.getChessboard().checkSquarePlayer(new Position(row, column));
                 if (player != null) {
                     ImageIcon playerIcon = getPlayerIcon(player);
                     grafic.pieceLabels[row][column].setIcon(playerIcon);
@@ -83,7 +81,6 @@ public class Controller {
         }
     }
 
-    // Metodo per ottenere l'icona associata al giocatore
     private ImageIcon getPlayerIcon(Player player) {
         if (player == Player.PLAYER1) {
             return new ImageIcon(Objects.requireNonNull(getClass().getResource("/pedinarossa.png")));

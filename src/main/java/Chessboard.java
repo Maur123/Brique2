@@ -1,6 +1,6 @@
 public class Chessboard {
     private Square[][] table;
-    private int chessboardDimension;
+    private final int chessboardDimension;
 
     public Chessboard(int chessboardDimension) {
         this.chessboardDimension = chessboardDimension;
@@ -24,54 +24,52 @@ public class Chessboard {
         }
     }
 
-    private Square getSquare(Posizione posizione) {
-        return this.table[posizione.getRow()][posizione.getColumn()];
+    private Square getSquare(Position position) {
+        return this.table[position.getRow()][position.getColumn()];
     }
 
-    public int getChessboardDimension(){
+    public int getChessboardDimension() {
         return chessboardDimension;
     }
 
-    public ColorSquare checkSquareColor(Posizione posizione) {
-        if (isValidPosition(posizione)) {
-            return getSquare(posizione).getColor();
+    public ColorSquare checkSquareColor(Position position) {
+        if (isValidPosition(position)) {
+            return getSquare(position).getColor();
         } else {
-            // Tratta il caso in cui la posizione non sia valida
             System.out.println("Posizione non valida");
             return null;
         }
     }
 
-    public Player checkSquarePlayer(Posizione posizione) {
-        if (isValidPosition(posizione)) {
-            return getSquare(posizione).getPlayer();
+    public Player checkSquarePlayer(Position position) {
+        if (isValidPosition(position)) {
+            return getSquare(position).getPlayer();
         } else {
-            // Tratta il caso in cui la posizione non sia valida
             System.out.println("Posizione non valida");
             return null;
         }
     }
 
-    public void updateSquarePlayer(Posizione posizione, Player player) {
-        if (isValidPosition(posizione)) {
-            getSquare(posizione).occupy(player);
+    public void updateSquarePlayer(Position position, Player player) {
+        if (isValidPosition(position)) {
+            getSquare(position).occupy(player);
         } else {
             System.out.println("Posizione non valida");
         }
     }
 
-    public boolean isValidPosition(Posizione posizione) {
-        int row = posizione.getRow();
-        int column = posizione.getColumn();
+    public boolean isValidPosition(Position position) {
+        int row = position.getRow();
+        int column = position.getColumn();
         return row >= 0 && row < chessboardDimension && column >= 0 && column < chessboardDimension;
     }
 
-    public boolean isSquareOfPlayer(Posizione posizione, Player player) {
-        return this.checkSquarePlayer(posizione) == player;
+    public boolean isSquareOfPlayer(Position position, Player player) {
+        return this.checkSquarePlayer(position) == player;
     }
 
-    public boolean isSquareAvailable(Posizione posizione) {
-        return getSquare(posizione).isFree();
+    public boolean isSquareAvailable(Position position) {
+        return getSquare(position).isFree();
     }
 
     public void cleanChessboard() {
