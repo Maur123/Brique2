@@ -5,7 +5,6 @@ public class Grafic {
     public JFrame frame;
     public JPanel chessPanel;
     public JLabel[][] pieceLabels;
-    public JButton startButton;
     public JButton restartButton;
     public JButton quitButton;
     public JLabel turnIndicator;
@@ -22,7 +21,6 @@ public class Grafic {
         createChessBoard();
 
         // Creazione dei bottoni e indicatori
-        //startButton = new JButton("Start");
         restartButton = new JButton("Restart");
         quitButton = new JButton("Quit");
         turnIndicator = new JLabel("Turn: 0");
@@ -30,7 +28,6 @@ public class Grafic {
 
 
         JPanel buttonPanel = new JPanel();
-        //buttonPanel.add(startButton);
         buttonPanel.add(restartButton);
         buttonPanel.add(quitButton);
         buttonPanel.add(turnIndicator);
@@ -75,22 +72,5 @@ public class Grafic {
                 pieceLabels[row][column].setIcon(null); // Rimuovi l'icona del pezzo
             }
         }
-        // Ricrea la scacchiera
-        //createChessBoard();
     }
-
-    /*public void restChessBoard() {
-        Component[] components = chessPanel.getComponents();
-        for (int i = 0; i < components.length; i++) {
-            JPanel squarePanel = (JPanel) components[i];
-            int row = i / 15;
-            int column = i % 15;
-
-            if (((row + column) % 2) == 0) {
-                squarePanel.setBackground(new Color(139, 69, 19)); // Marrone
-            } else {
-                squarePanel.setBackground(new Color(255, 248, 220)); // Crema
-            }
-        }
-    }*/
 }

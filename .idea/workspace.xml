@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="testBrique">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ControllerOld.java" afterDir="false" />
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="NewController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ControllerOld.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Grafic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest3withCSVsources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest3withCSVsources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +80,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/Brique2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/ESAME BRIQUE/Brique_Project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\IdeaProjects\Brique2\src\test\resources" />
@@ -97,7 +100,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Controller2">
+  <component name="RunManager" selected="Application.Controller">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="Brique2.main" />
@@ -199,7 +202,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Controller2" />
+        <item itemvalue="Application.Controller" />
         <item itemvalue="Gradle.TestManageMoveEffects" />
         <item itemvalue="Gradle.TestManageMoveEffects.itShouldUpdateSquare" />
         <item itemvalue="Gradle.TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1" />
@@ -300,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708098716467</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="NewController">
+      <created>1708352765614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708352765614</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,6 +337,7 @@
     <MESSAGE value="parametrized test chessboard" />
     <MESSAGE value="victoryChecker" />
     <MESSAGE value="testBrique" />
-    <option name="LAST_COMMIT_MESSAGE" value="testBrique" />
+    <MESSAGE value="NewController" />
+    <option name="LAST_COMMIT_MESSAGE" value="NewController" />
   </component>
 </project>
