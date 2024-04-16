@@ -12,9 +12,9 @@ public class VictoryCheckerTest {
     @ParameterizedTest
     @MethodSource("provideChessboardAndWinningPlayer")
     public void testHasPlayerWon(Chessboard chessboard, Player player) {
-        VictoryChecker victoryChecker = new VictoryChecker(player, chessboard);
+        VictoryChecker victoryChecker = new VictoryChecker(chessboard);
 
-        boolean actualResult = victoryChecker.hasPlayerWon();
+        boolean actualResult = victoryChecker.hasPlayerWon(player);
         boolean expectedResult = true;
 
         assertEquals(expectedResult, actualResult);
@@ -24,9 +24,9 @@ public class VictoryCheckerTest {
     @ParameterizedTest
     @MethodSource("provideChessboardAndNotWinningPlayer")
     public void testHasPlayerNotWon(Chessboard chessboard, Player player) {
-        VictoryChecker victoryChecker = new VictoryChecker(player, chessboard);
+        VictoryChecker victoryChecker = new VictoryChecker(chessboard);
 
-        boolean actualResult = victoryChecker.hasPlayerWon();
+        boolean actualResult = victoryChecker.hasPlayerWon(player);
         boolean expectedResult = false;
 
         assertEquals(expectedResult, actualResult);
@@ -45,5 +45,4 @@ public class VictoryCheckerTest {
                 Arguments.of(ChessboardTestDataFactory.createPlayer2WinningChessboard(), Player.PLAYER1)
         );
     }
-
 }

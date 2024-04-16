@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Grafic {
+public class Graphic {
     public JFrame frame;
     public JPanel chessPanel;
     public JLabel[][] pieceLabels;
@@ -9,18 +9,21 @@ public class Grafic {
     public JButton quitButton;
     public JLabel turnIndicator;
     public JLabel playerNumber;
+    private final Color BROWN = new Color(139, 69, 19);
+    private final Color CREAM = new Color(255, 248, 220);
+    private final int chessboardSize;
 
-    public Grafic() {
+    public Graphic(int chessboardSize) {
+        this.chessboardSize = chessboardSize;
+
         frame = new JFrame("Chess Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        // Creazione della scacchiera
-        chessPanel = new JPanel(new GridLayout(15, 15));
-        pieceLabels = new JLabel[15][15];
+        chessPanel = new JPanel(new GridLayout(chessboardSize, chessboardSize));
+        pieceLabels = new JLabel[chessboardSize][chessboardSize];
         createChessBoard();
 
-        // Creazione dei bottoni e indicatori
         restartButton = new JButton("Restart");
         quitButton = new JButton("Quit");
         turnIndicator = new JLabel("Turn: 0");
@@ -41,20 +44,20 @@ public class Grafic {
     }
 
     private void createChessBoard() {
-        for (int row = 0; row < 15; row++) {
-            for (int column = 0; column < 15; column++) {
+        for (int row = 0; row < chessboardSize; row++) {
+            for (int column = 0; column < chessboardSize; column++) {
                 JPanel squarePanel = new JPanel();
                 if (((row + column) % 2) == 0) {
-                    squarePanel.setBackground(new Color(139, 69, 19)); // Marrone
+                    squarePanel.setBackground(BROWN);
                 } else {
-                    squarePanel.setBackground(new Color(255, 248, 220)); // Crema
+                    squarePanel.setBackground(CREAM);
                 }
-                squarePanel.setOpaque(true); // Assicurarsi che il pannello mostri il colore di sfondo
+                squarePanel.setOpaque(true);
                 squarePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 chessPanel.add(squarePanel);
 
                 JLabel pieceLabel = new JLabel();
-                pieceLabel.setSize(50, 50);  // Imposta la dimensione dell'etichetta
+                pieceLabel.setSize(50, 50);
                 squarePanel.setLayout(new BorderLayout());
                 squarePanel.add(pieceLabel, BorderLayout.CENTER);
 
@@ -66,10 +69,9 @@ public class Grafic {
     }
 
     public void resetChessBoard() {
-        // Rimuovi tutti i pezzi dalla scacchiera
-        for (int row = 0; row < 15; row++) {
-            for (int column = 0; column < 15; column++) {
-                pieceLabels[row][column].setIcon(null); // Rimuovi l'icona del pezzo
+        for (int row = 0; row < chessboardSize; row++) {
+            for (int column = 0; column < chessboardSize; column++) {
+                pieceLabels[row][column].setIcon(null);
             }
         }
     }

@@ -1,34 +1,26 @@
 public class VictoryChecker {
-
-    private final Player player;
     private final Chessboard chessboard;
     private final boolean[][] mask;
 
-    public VictoryChecker(Player player, Chessboard chessboard) {
-        this.player = player;
+    public VictoryChecker(Chessboard chessboard) {
         this.chessboard = chessboard;
         mask = new boolean[chessboard.getChessboardDimension()][chessboard.getChessboardDimension()];
     }
 
-    public boolean hasPlayerWon() {
-        for (int i = 0; i < chessboard.getChessboardDimension(); i++) {
-            for (int j = 0; j < chessboard.getChessboardDimension(); j++) {
-                mask[i][j] = false;
-            }
-        }
+    public boolean hasPlayerWon(Player player) {
+        resetMask();
 
         if (player == Player.PLAYER1) {
-            for (int j = 0; j < chessboard.getChessboardDimension(); j++) {
-                Position startingPosition = new Position(0, j);
-                if (hasPlayerWonFromPosition(startingPosition)) {
+            for (int column = 0; column < chessboard.getChessboardDimension(); column++) {
+                Position startingPosition = new Position(0, column);
+                if (hasPlayerWonFromPosition(startingPosition, player)) {
                     return true;
                 }
             }
-        }
-        if (player == Player.PLAYER2) {
-            for (int i = 0; i < chessboard.getChessboardDimension(); i++) {
-                Position startingPosition = new Position(i, 0);
-                if (hasPlayerWonFromPosition(startingPosition)) {
+        } else if (player == Player.PLAYER2) {
+            for (int row = 0; row < chessboard.getChessboardDimension(); row++) {
+                Position startingPosition = new Position(row, 0);
+                if (hasPlayerWonFromPosition(startingPosition, player)) {
                     return true;
                 }
             }
@@ -36,12 +28,20 @@ public class VictoryChecker {
         return false;
     }
 
-    private boolean hasPlayerWonFromPosition(Position startingPosition) {
-        return chessboard.isSquareOfPlayer(startingPosition, player)
-                && checkVictoryRecursive(startingPosition);
+    private void resetMask() {
+        for (int i = 0; i < chessboard.getChessboardDimension(); i++) {
+            for (int j = 0; j < chessboard.getChessboardDimension(); j++) {
+                mask[i][j] = false;
+            }
+        }
     }
 
-    private boolean checkVictoryRecursive(Position position) {
+    private boolean hasPlayerWonFromPosition(Position startingPosition, Player player) {
+        return chessboard.isSquareOfPlayer(startingPosition, player)
+                && checkVictoryRecursive(startingPosition, player);
+    }
+
+    private boolean checkVictoryRecursive(Position position, Player player) {
         if (!chessboard.isValidPosition(position)) {
             return false;
         }
@@ -63,10 +63,10 @@ public class VictoryChecker {
             return true;
         }
 
-        return checkVictoryRecursive(new Position(position.getRow(), position.getColumn() - 1)) ||
-                checkVictoryRecursive(new Position(position.getRow() - 1, position.getColumn())) ||
-                checkVictoryRecursive(new Position(position.getRow(), position.getColumn() + 1)) ||
-                checkVictoryRecursive(new Position(position.getRow() + 1, position.getColumn()));
+        return checkVictoryRecursive(new Position(position.getRow(), position.getColumn() - 1), player) ||
+                checkVictoryRecursive(new Position(position.getRow() - 1, position.getColumn()), player) ||
+                checkVictoryRecursive(new Position(position.getRow(), position.getColumn() + 1), player) ||
+                checkVictoryRecursive(new Position(position.getRow() + 1, position.getColumn()), player);
     }
 
     private boolean isPositionAlreadyChecked(Position position) {

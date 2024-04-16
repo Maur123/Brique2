@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="NewController">
+    <list default="true" id="b5637d15-7e6a-4e6e-9e13-9bb56908de12" name="Changes" comment="rename and remove old comments">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MoveEffectsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MoveEffectsManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Brique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Brique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ControllerOld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Grafic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest3withCSVsources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest3withCSVsources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTestFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Grafic.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Grafic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VictoryChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VictoryChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BriqueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BriqueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VictoryCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VictoryCheckerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,15 +82,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/ESAME BRIQUE/Brique_Project",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/ESAME BRIQUE/Brique_Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\IdeaProjects\Brique2\src\test\resources" />
@@ -100,15 +102,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Controller">
-    <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller" />
-      <module name="Brique2.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDataFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.VictoryCheckerTest">
+    <configuration name="BriqueTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +116,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest3$TestDataFactory&quot;" />
+            <option value="&quot;BriqueTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -131,7 +126,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestManageMoveEffects" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MoveEffectsManagerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -144,7 +139,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest4$TestManageMoveEffects&quot;" />
+            <option value="&quot;MoveEffectsManagerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -154,7 +149,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -167,7 +162,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest3$TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1&quot;" />
+            <option value="&quot;MoveEffectsManagerTest$TestUpdate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,7 +172,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestManageMoveEffects.itShouldUpdateSquare" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VictoryCheckerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -190,7 +185,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BriqueTest4$TestManageMoveEffects.itShouldUpdateSquare&quot;" />
+            <option value="&quot;VictoryCheckerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="VictoryCheckerTest.testHasPlayerNotWon" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;VictoryCheckerTest.testHasPlayerNotWon&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -202,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Controller" />
-        <item itemvalue="Gradle.TestManageMoveEffects" />
-        <item itemvalue="Gradle.TestManageMoveEffects.itShouldUpdateSquare" />
-        <item itemvalue="Gradle.TestManageMoveEffects_UpdateSquareOnWhite2.itShouldUpdateTheWhiteSquareForPlayer1" />
-        <item itemvalue="Gradle.TestDataFactory" />
+        <item itemvalue="Gradle.VictoryCheckerTest" />
+        <item itemvalue="Gradle.BriqueTest" />
+        <item itemvalue="Gradle.MoveEffectsManagerTest" />
+        <item itemvalue="Gradle.TestUpdate" />
+        <item itemvalue="Gradle.VictoryCheckerTest.testHasPlayerNotWon" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1708352765614</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Clean old code">
+      <created>1712330923809</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712330923809</updated>
+    </task>
+    <task id="LOCAL-00015" summary="rename and remove old comments">
+      <created>1712334075755</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712334075755</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,6 +370,10 @@
     <MESSAGE value="victoryChecker" />
     <MESSAGE value="testBrique" />
     <MESSAGE value="NewController" />
-    <option name="LAST_COMMIT_MESSAGE" value="NewController" />
+    <MESSAGE value="Clean old code" />
+    <MESSAGE value="rename and remove old comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename and remove old comments" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
